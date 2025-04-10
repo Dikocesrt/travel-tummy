@@ -1,6 +1,7 @@
 const Place = require("./place");
 const Menu = require("./menu");
 const Photo = require("./photo");
+const Movie = require("./movie");
 
 Place.hasMany(Menu, { foreignKey: "placeID", as: "menus" });
 Place.hasMany(Photo, { foreignKey: "placeID", as: "photos" });
@@ -14,6 +15,8 @@ const initializeTables = async () => {
         await Place.sync();
         await Menu.sync();
         await Photo.sync();
+        await Movie.sync();
+
         console.log("✅ Tables synchronized successfully!");
     } catch (error) {
         console.error("❌ Database synchronization failed:", error);
@@ -22,4 +25,4 @@ const initializeTables = async () => {
 
 initializeTables();
 
-module.exports = { Place, Menu, Photo };
+module.exports = { Place, Menu, Photo, Movie };
