@@ -2,7 +2,7 @@
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
-const router = require("./routes/routes");
+const router = require("./routes/route");
 require("./configs/database");
 
 // WEB SERVER

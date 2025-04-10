@@ -76,6 +76,7 @@ const Place = sequelize.define(
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false,
+            field: "is_fav",
         },
         mapURL: {
             type: DataTypes.STRING,
