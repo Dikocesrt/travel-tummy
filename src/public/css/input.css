@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary-orange: #ed8a19;
+    --color-primary-pink: #ff7d6b;
+    --color-kirani-black: #454545;
+    --color-kirani-red: #58231b;
     --font-poppins: "Poppins", sans-serif;
 }

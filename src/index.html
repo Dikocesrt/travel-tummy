@@ -12,6 +12,73 @@
     <link rel="stylesheet" href="./public/css/output.css">
 </head>
 <body>
-    
+    <div class="w-full min-h-screen bg-white">
+        <nav class="w-full bg-white py-4">
+            <div class="w-full max-w-[340px] mx-auto flex flex-col gap-y-3 lg:hidden">
+                <div class="w-full flex flex-row items-center justify-between">
+                    <p class="font-poppins text-black font-bold text-[16px]">Travel<span class="text-primary-pink">Tummy</span></p>
+                    <svg class="w-10" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.5 11.75C6.08579 11.75 5.75 12.0858 5.75 12.5C5.75 12.9142 6.08579 13.25 6.5 13.25V11.75ZM18.5 13.25C18.9142 13.25 19.25 12.9142 19.25 12.5C19.25 12.0858 18.9142 11.75 18.5 11.75V13.25ZM6.5 15.75C6.08579 15.75 5.75 16.0858 5.75 16.5C5.75 16.9142 6.08579 17.25 6.5 17.25V15.75ZM18.5 17.25C18.9142 17.25 19.25 16.9142 19.25 16.5C19.25 16.0858 18.9142 15.75 18.5 15.75V17.25ZM6.5 7.75C6.08579 7.75 5.75 8.08579 5.75 8.5C5.75 8.91421 6.08579 9.25 6.5 9.25V7.75ZM18.5 9.25C18.9142 9.25 19.25 8.91421 19.25 8.5C19.25 8.08579 18.9142 7.75 18.5 7.75V9.25ZM6.5 13.25H18.5V11.75H6.5V13.25ZM6.5 17.25H18.5V15.75H6.5V17.25ZM6.5 9.25H18.5V7.75H6.5V9.25Z" fill="#000000"></path> </g></svg>
+                </div>
+                <div class="w-full flex-col gap-y-3 hidden">
+                    <p>Tempat</p>
+                    <p>Menu</p>
+                    <p>Movie</p>
+                </div>
+            </div>
+            <div class="w-full lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px] mx-auto flex-row items-center justify-between hidden lg:flex">
+                <div class="w-full flex flex-row items-center justify-between">
+                    <p class="font-poppins text-black font-bold text-[32px]">Travel<span class="text-primary-pink">Tummy</span></p>
+                    <div class="flex flex-row gap-x-4">
+                        <a href="" class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300">
+                            <img src="./public/images/store-icon.svg" alt="">
+                            <p class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white">Tempat</p>
+                        </a>
+                        <a href="" class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300">
+                            <img src="./public/images/dish-icon.svg" alt="">
+                            <p class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white">Menu</p>
+                        </a>
+                        <a href="" class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300">
+                            <img src="./public/images/glases-icon.svg" alt="">
+                            <p class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white">Movie</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section id="hero" class="w-full relative h-[720px]">
+            <img src="./public/images/bg-large.png" class="hidden lg:block absolute z-10 w-full h-full" alt="">
+            <img src="./public/images/bg-small.png" class="block lg:hidden absolute z-10 w-full h-full" alt="">
+            <div class="flex flex-col lg:flex-row relative z-20 w-full max-w-[340px] lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px] mx-auto pt-8 h-[80%] lg:pt-0">
+                <div class="flex flex-col lg:self-center pt-4 lg:pt-20 2xl:pt-12">
+                    <p class="uppercase font-poppins font-extrabold text-[16px] text-kirani-black text-center lg:text-start lg:text-[32px] xl:text-[40px] 2xl:text-[52px] mb-[10px]">welcome to <span class="text-primary-pink">traveltummy!</span></p>
+                    <p class="font-poppins font-semibold text-kirani-red text-[14px] text-center mb-[10px] lg:text-start lg:text-[18px] xl:text-[22px]">Tempat Rasa, Cerita, Dan Cinta Disimpan Rapih</p>
+                    <p class="font-poppins font-light text-kirani-black text-[11px] text-justify mb-[10px] lg:text-[16px] xl:text-[18px]">Tempat curhat digital kami tentang <span class="font-bold text-primary-pink">makanan</span> yang <span class="font-bold text-primary-pink">bikin kenyang atau nyesel</span>, <span class="font-bold text-primary-pink">tempat</span> yang <span class="font-bold text-primary-pink">bikin betah atau pegal</span>, dan <span class="font-bold text-primary-pink">film</span> yang <span class="font-bold text-primary-pink">keren atau aneh</span>. Nggak cuma <span class="font-bold text-primary-pink">kasih rating</span>, tapi juga <span class="font-bold text-primary-pink">nyimpen momen-momen kecil</span> yang berharga lengkap dengan <span class="font-bold text-primary-pink">foto dan cerita</span> di baliknya. Karena setiap gigitan, langkah, dan tontonan punya cerita. Dan <span class="font-bold text-primary-pink">cerita itu pantas dikenang dan dikasih bintang</span> ⭐</p>
+                    <p class="font-poppins font-bold text-kirani-black text-[11px] lg:text-[16px] text-justify lg:text-start xl:text-[18px]">“Karena cinta nggak cukup diingat, tapi juga perlu diabadikan.” ~<span class="text-primary-pink">dikokirani</span>❤️‍🔥</p>
+                </div>
+                <img src="./public/images/hero.png" alt="" class="lg:self-center lg:w-[400px] xl:w-[500px] 2xl:w-[600px] h-fit">
+            </div>
+        </section>
+
+        <section id="content" class="w-full pt-20 pb-28">
+            <div class="flex flex-col gap-y-12 mx-auto w-full max-w-[340px] lg:max-w-2xl">
+                <p class="font-poppins font-extrabold text-center text-[24px] text-kirani-black lg:text-[32px] xl:text-[40px] 2xl:text-[52px] ">Konten <span class="text-primary-pink">Kami!</span></p>
+                <div class="flex flex-row mx-auto gap-x-6 lg:justify-between lg:mx-0">
+                    <a href="" class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300">
+                        <img src="./public/images/place-icon.png" alt="" class="w-[50px] lg:w-[100px]">
+                        <p class="font-poppins font-semibold text-black text-[10px] lg:text-[24px]">Tempat</p>
+                    </a>
+                    <a href="" class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300">
+                        <img src="./public/images/food-icon.png" alt="" class="w-[50px] lg:w-[100px]">
+                        <p class="font-poppins font-semibold text-black text-[10px] lg:text-[24px]">Menu</p>
+                    </a>
+                    <a href="" class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300">
+                        <img src="./public/images/movie-icon.png" alt="" class="w-[50px] lg:w-[100px]">
+                        <p class="font-poppins font-semibold text-black text-[10px] lg:text-[24px]">Movie</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
