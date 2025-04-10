@@ -3,7 +3,9 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const router = require("./routes/route");
+require("dotenv").config();
 require("./configs/database");
+require("./models/index");
 
 // WEB SERVER
 const app = express();
