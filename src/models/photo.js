@@ -13,6 +13,7 @@ const Photo = sequelize.define(
         imageURL: {
             type: DataTypes.STRING,
             allowNull: false,
+            field: "image_url",
         },
         placeID: {
             type: DataTypes.UUID,
