@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, ConnectionTimedOutError } = require("sequelize");
 
 require("dotenv").config();
 

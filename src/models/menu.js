@@ -73,6 +73,7 @@ const Menu = sequelize.define(
         tableName: "menus",
         timestamps: true,
         paranoid: true,
+        underscored: true,
     }
 );
 

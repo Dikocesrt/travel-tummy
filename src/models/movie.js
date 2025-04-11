@@ -42,6 +42,7 @@ const Movie = sequelize.define(
         tableName: "movies",
         timestamps: true,
         paranoid: true,
+        underscored: true,
     }
 );
 

@@ -29,6 +29,7 @@ const Photo = sequelize.define(
         tableName: "photos",
         timestamps: true,
         paranoid: true,
+        underscored: true,
     }
 );
 

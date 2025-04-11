@@ -10,19 +10,4 @@ Menu.belongsTo(Place, { foreignKey: "placeID", as: "place" });
 
 Photo.belongsTo(Place, { foreignKey: "placeID", as: "place" });
 
-const initializeTables = async () => {
-    try {
-        await Place.sync();
-        await Menu.sync();
-        await Photo.sync();
-        await Movie.sync();
-
-        console.log("✅ Tables synchronized successfully!");
-    } catch (error) {
-        console.error("❌ Database synchronization failed:", error);
-    }
-};
-
-initializeTables();
-
 module.exports = { Place, Menu, Photo, Movie };

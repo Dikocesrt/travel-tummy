@@ -88,6 +88,7 @@ const Place = sequelize.define(
         tableName: "places",
         timestamps: true,
         paranoid: true,
+        underscored: true,
     }
 );
 
