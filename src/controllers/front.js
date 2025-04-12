@@ -1,6 +1,6 @@
 const { Menu, Place, Movie } = require("../models/index");
 const getURL = require("../helper/getCloudinary");
-const { Op } = require("sequelize");
+const sequelize = require("../configs/database");
 
 const showFront = async (req, res) => {
     try {
@@ -44,10 +44,7 @@ const showFront = async (req, res) => {
         });
 
         const movies = await Movie.findAll({
-            where: {
-                isFav: true,
-            },
-            order: sequelize.random(),
+            order: [["her_rating", "DESC"]],
             limit: 3,
         });
 
@@ -59,7 +56,7 @@ const showFront = async (req, res) => {
             }
         });
 
-        res.render("front/index", {
+        res.render("index", {
             isFront: true,
             places: plainPlaces,
             menus: plainMenus,

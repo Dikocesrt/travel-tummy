@@ -97,7 +97,7 @@
                         class="flex flex-row mx-auto gap-x-6 lg:justify-between lg:mx-0"
                     >
                         <a
-                            href=""
+                            href="/places"
                             class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300"
                         >
                             <img
@@ -110,7 +110,7 @@
                             >Tempat</p>
                         </a>
                         <a
-                            href=""
+                            href="/menus"
                             class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300"
                         >
                             <img
@@ -123,7 +123,7 @@
                             >Menu</p>
                         </a>
                         <a
-                            href=""
+                            href="/movies"
                             class="flex flex-col rounded-full py-2 px-4 lg:py-4 lg:px-8 ring-2 ring-primary-pink items-center hover:scale-105 hover:duration-300"
                         >
                             <img
@@ -158,21 +158,22 @@
                         WIFI dan Voucher promoo yang bisa dipakai berkali kali
                         xixi.
                         <a
-                            href=""
-                            class="font-bold text-primary-pink"
+                            href="/places"
+                            class="font-bold text-primary-pink hover:underline"
                         >Jalan-Jalan Terus Kuy~</a></p>
                     <div
                         class="grid grid-cols-1 lg:grid-cols-3 gap-5 xl:gap-8 2xl:max-w-6xl mx-auto"
                     >
+                        {{#each places}}
                         <div class="flex flex-col">
                             <div class="relative w-full">
                                 <img
-                                    src="/images/place.png"
+                                    src="{{this.imageURL}}"
                                     alt=""
                                     class="w-full opacity-0 pointer-events-none select-none"
                                 />
                                 <img
-                                    src="/images/place.png"
+                                    src="{{this.imageURL}}"
                                     alt=""
                                     class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
                                 />
@@ -182,101 +183,27 @@
                                     <img src="/images/star-icon.svg" alt="" />
                                     <p
                                         class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
+                                    >{{this.overallRating}}</p>
                                 </div>
                             </div>
                             <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white p-4"
+                                class="flex flex-col justify-between rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white p-4 h-full"
                             >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-2"
-                                >Kopi Kenangan Jakal</p>
-                                <p
-                                    class="font-poppins font-light text-[12px] text-black text-center mb-2"
-                                >Lorem ipsum dolor sit amet, consectetuer
-                                    adipiscing elit. Aenean com ......</p>
-                                <a
-                                    href=""
-                                    class="flex items-center justify-center mx-auto px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300"
-                                >Detail</a>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <div class="relative w-full">
-                                <img
-                                    src="/images/place.png"
-                                    alt=""
-                                    class="w-full opacity-0 pointer-events-none select-none"
-                                />
-                                <img
-                                    src="/images/place.png"
-                                    alt=""
-                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
-                                />
-                                <div
-                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
-                                >
-                                    <img src="/images/star-icon.svg" alt="" />
+                                <div class="flex flex-col">
                                     <p
-                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
-                                </div>
-                            </div>
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white p-4"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-2"
-                                >Kopi Kenangan Jakal</p>
-                                <p
-                                    class="font-poppins font-light text-[12px] text-black text-center mb-2"
-                                >Lorem ipsum dolor sit amet, consectetuer
-                                    adipiscing elit. Aenean com ......</p>
-                                <a
-                                    href=""
-                                    class="flex items-center justify-center mx-auto px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300"
-                                >Detail</a>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <div class="relative w-full">
-                                <img
-                                    src="/images/place.png"
-                                    alt=""
-                                    class="w-full opacity-0 pointer-events-none select-none"
-                                />
-                                <img
-                                    src="/images/place.png"
-                                    alt=""
-                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
-                                />
-                                <div
-                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
-                                >
-                                    <img src="/images/star-icon.svg" alt="" />
+                                        class="font-poppins font-semibold text-black text-[16px] text-center mb-2"
+                                    >{{this.name}}</p>
                                     <p
-                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
+                                        class="font-poppins font-light text-[12px] text-black text-center mb-2"
+                                    >{{truncate this.description 90}}</p>
                                 </div>
-                            </div>
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white p-4"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-2"
-                                >Kopi Kenangan Jakal</p>
-                                <p
-                                    class="font-poppins font-light text-[12px] text-black text-center mb-2"
-                                >Lorem ipsum dolor sit amet, consectetuer
-                                    adipiscing elit. Aenean com ......</p>
                                 <a
                                     href=""
                                     class="flex items-center justify-center mx-auto px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300"
                                 >Detail</a>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </section>
@@ -299,178 +226,68 @@
                         dan hati ikut senang.Soalnya buat kita, tiap makanan itu
                         bukan cuma soal rasa tapi juga soal momen yang dibagi
                         bareng.
-                        <a href="" class="font-bold text-primary-pink">Klik buat
+                        <a href="/menus" class="font-bold text-primary-pink hover:underline">Klik buat
                             lanjut kulineran sambil nostalgia bareng kita! 🍜💞</a></p>
                     <div
                         class="grid grid-cols-1 lg:grid-cols-3 gap-5 xl:gap-8 2xl:max-w-6xl mx-auto"
                     >
-                        <div class="flex flex-col">
-                            <div class="relative w-full">
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full opacity-0 pointer-events-none select-none"
-                                />
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
-                                />
-                                <div
-                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
-                                >
-                                    <img src="/images/star-icon.svg" alt="" />
-                                    <p
-                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
-                                </div>
-                            </div>
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
-                                >Nasi Goreng Ikan Telur</p>
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex flex-col gap-y-4">
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/price-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-black"
-                                            >Rp. 15.000,00</p>
-                                        </div>
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/location-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-[#929292]"
-                                            >Pandean,Sewon</p>
-                                        </div>
+                        {{#each menus}}
+                            <div class="flex flex-col">
+                                <div class="relative w-full">
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full opacity-0 pointer-events-none select-none"
+                                    />
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
+                                    />
+                                    <div
+                                        class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
+                                    >
+                                        <img src="/images/star-icon.svg" alt="" />
+                                        <p
+                                            class="font-poppins font-medium text-[14px] text-[#1F1449]"
+                                        >{{this.overallRating}}</p>
                                     </div>
-                                    <a
-                                        href=""
-                                        class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
-                                    >Detail</a>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <div class="relative w-full">
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full opacity-0 pointer-events-none select-none"
-                                />
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
-                                />
                                 <div
-                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
+                                    class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
                                 >
-                                    <img src="/images/star-icon.svg" alt="" />
                                     <p
-                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
-                                </div>
-                            </div>
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
-                                >Nasi Goreng Ikan Telur</p>
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex flex-col gap-y-4">
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/price-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-black"
-                                            >Rp. 15.000,00</p>
+                                        class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
+                                    >{{this.name}}</p>
+                                    <div class="flex flex-row justify-between gap-x-2">
+                                        <div class="flex flex-col gap-y-2">
+                                            <div class="flex flex-row gap-x-3">
+                                                <img
+                                                    src="/images/price-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >Rp. {{formatRupiah this.price}},00</p>
+                                            </div>
+                                            <div class="flex flex-row gap-x-3">
+                                                <img
+                                                    src="/images/location-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-[#929292]"
+                                                >{{this.place.name}}</p>
+                                            </div>
                                         </div>
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/location-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-[#929292]"
-                                            >Pandean,Sewon</p>
-                                        </div>
+                                        <a
+                                            href=""
+                                            class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
+                                        >Detail</a>
                                     </div>
-                                    <a
-                                        href=""
-                                        class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
-                                    >Detail</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <div class="relative w-full">
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full opacity-0 pointer-events-none select-none"
-                                />
-                                <img
-                                    src="/images/food.png"
-                                    alt=""
-                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
-                                />
-                                <div
-                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
-                                >
-                                    <img src="/images/star-icon.svg" alt="" />
-                                    <p
-                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
-                                    >4.8</p>
-                                </div>
-                            </div>
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
-                                >Nasi Goreng Ikan Telur</p>
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex flex-col gap-y-4">
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/price-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-black"
-                                            >Rp. 15.000,00</p>
-                                        </div>
-                                        <div class="flex flex-row gap-x-3">
-                                            <img
-                                                src="/images/location-icon.svg"
-                                                alt=""
-                                            />
-                                            <p
-                                                class="font-poppins italic text-[14px] text-[#929292]"
-                                            >Pandean,Sewon</p>
-                                        </div>
-                                    </div>
-                                    <a
-                                        href=""
-                                        class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
-                                    >Detail</a>
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </section>
@@ -512,211 +329,82 @@
                         paling sedih biar gagal nangis. Tapi justru hal-hal
                         kecil itu yang bikin tiap film terasa lebih seru, dan
                         tiap tontonan jadi kenangan manis yang susah dilupain.
-                        <a href="" class="font-bold text-primary-pink">Yuks Liat
+                        <a href="/movies" class="font-bold text-primary-pink hover:underline">Yuks Liat
                             daftar Film yang udah kita buat!😚💗</a></p>
                     <div
                         class="grid grid-cols-1 lg:grid-cols-3 gap-5 xl:gap-8 2xl:max-w-6xl mx-auto"
                     >
-                        <div class="flex flex-col">
-                            <img
-                                src="/images/movie.png"
-                                alt=""
-                                class="w-full rounded-t-[20px]"
-                            />
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-3"
-                                >Exhuma</p>
+                        {{#each movies}}
+                            <div class="flex flex-col">
+                                <img
+                                    src="{{this.imageURL}}"
+                                    alt=""
+                                    class="w-full rounded-t-[20px]"
+                                />
                                 <div
-                                    class="flex flex-row justify-between items-center mb-3"
+                                    class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
                                 >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/genre-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Horror,Misteri</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/origin-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Korea</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-between items-center"
-                                >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/him-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/her-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <p
+                                        class="font-poppins font-semibold text-black text-[16px] text-center mb-3"
+                                    >{{this.title}}</p>
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="flex flex-row justify-between items-center mb-3"
+                                        >
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/genre-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{this.genre}}</p>
+                                            </div>
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/origin-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{this.origin}}</p>
+                                            </div>
+                                        </div>
 
-                        <div class="flex flex-col">
-                            <img
-                                src="/images/movie.png"
-                                alt=""
-                                class="w-full rounded-t-[20px]"
-                            />
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-3"
-                                >Exhuma</p>
-                                <div
-                                    class="flex flex-row justify-between items-center mb-3"
-                                >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/genre-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Horror,Misteri</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/origin-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Korea</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-between items-center"
-                                >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/him-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/her-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
+                                        <div
+                                            class="flex flex-row justify-between items-center"
+                                        >
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/him-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{#if this.himRating}}{{this.himRating}}{{else}}-{{/if}}/10</p>
+                                            </div>
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/her-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{#if this.herRating}}{{this.herRating}}{{else}}-{{/if}}/10</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="flex flex-col">
-                            <img
-                                src="/images/movie.png"
-                                alt=""
-                                class="w-full rounded-t-[20px]"
-                            />
-                            <div
-                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6"
-                            >
-                                <p
-                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-3"
-                                >Exhuma</p>
-                                <div
-                                    class="flex flex-row justify-between items-center mb-3"
-                                >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/genre-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Horror,Misteri</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/origin-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >Korea</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-between items-center"
-                                >
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/him-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
-                                    </div>
-                                    <div
-                                        class="flex flex-row gap-x-3 justify-between items-center"
-                                    >
-                                        <img
-                                            src="/images/her-icon.svg"
-                                            alt=""
-                                        />
-                                        <p
-                                            class="font-poppins italic text-[14px] text-black"
-                                        >9.5/10</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </section>
