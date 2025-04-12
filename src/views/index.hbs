@@ -22,11 +22,12 @@
                     <div
                         class="w-full flex flex-row items-center justify-between"
                     >
-                        <p
-                            class="font-poppins text-black font-bold text-[16px]"
-                        >Travel<span class="text-primary-pink">Tummy</span></p>
+                        <a
+                            href="/" class="font-poppins text-black font-bold text-[16px] hover:scale-105 hover:duration-300"
+                        >Travel<span class="text-primary-pink">Tummy</span></a>
                         <svg
-                            class="w-10"
+                            id="dropdown-toggle"
+                            class="w-10 hover:cursor-pointer hover:scale-105 hover:duration-300"
                             viewBox="0 -0.5 25 25"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +42,19 @@
                                 ></path>
                             </g></svg>
                     </div>
-                    <div class="w-full flex-col gap-y-3 hidden">
-                        <p>Tempat</p>
-                        <p>Menu</p>
-                        <p>Movie</p>
+                    <div id="nav-dropdown" class="w-full hidden flex-col gap-y-3 lg:hidden">
+                        <a href="" class="flex flex-col group w-fit">
+                            <p class="font-poppins font-medium text-black text-[15px]">Tempat</p>
+                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
+                        </a>
+                        <a href="" class="flex flex-col group w-fit">
+                            <p class="font-poppins font-medium text-black text-[15px]">Menu</p>
+                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
+                        </a>
+                        <a href="" class="flex flex-col group w-fit mb-2">
+                            <p class="font-poppins font-medium text-black text-[15px]">Movie</p>
+                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
+                        </a>
                     </div>
                 </div>
                 <div
@@ -798,5 +808,15 @@
                 </div>
             </section>
         </div>
+
+    <script>
+        const svgToggle = document.getElementById('dropdown-toggle');
+        const dropdown = document.getElementById('nav-dropdown');
+
+        svgToggle.addEventListener('click', () => {
+            dropdown.classList.toggle('hidden');
+            dropdown.classList.toggle('flex');
+        });
+    </script>
     </body>
 </html>
