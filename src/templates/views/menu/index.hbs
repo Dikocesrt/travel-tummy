@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Yang Kita Cobain</title>
+
+    {{> font}}
+
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body>
+    <div class="w-full bg-white min-h-screen">
+        {{> navbar}}
+
+        <section id="content" class="w-full bg-white pt-14 pb-20">
+            <div class="flex flex-col max-w-[340px] mx-auto lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px]">
+                <div class="flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row mx-auto lg:mx-0 w-full lg:justify-between lg:items-center mb-10">
+                    <p class="font-poppins font-semibold text-kirani-black text-[24px] lg:text-[32px] xl:text-[36px] text-center">Menu Makanan Dan Minuman</p>
+                    <form action="/menus" class="flex flex-row items-center gap-x-2 ring ring-gray-border focus-within:ring-primary-pink hover:ring-primary-pink hover:ring-2 focus-within:ring-2 rounded-lg shadow-md px-4 py-[10px] w-[90%] lg:w-fit lg:mx-0 mx-auto">
+                        <svg class="w-5 opacity-[40%]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        <input type="text" name="search" value="{{search}}" placeholder="Search menu" class="w-full focus:outline-none placeholder:text-[#1E1E1E] placeholder:opacity-[40%] placeholder:font-poppins placeholder:text-[14px]">
+                    </form>
+                </div>
+
+                {{#if menus.length}}
+                    <div class="w-full bg-white grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 items-stretch">
+                        {{#each menus}}
+                            <div class="flex flex-col">
+                                <div class="relative w-full">
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full opacity-0 pointer-events-none select-none"
+                                    />
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
+                                    />
+                                    <div
+                                        class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
+                                    >
+                                        <img src="/images/star-icon.svg" alt="" />
+                                        <p
+                                            class="font-poppins font-medium text-[14px] text-[#1F1449]"
+                                        >{{this.overallRating}}</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
+                                >
+                                    <p
+                                        class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
+                                    >{{this.name}}</p>
+                                    <div class="flex flex-row justify-between gap-x-2">
+                                        <div class="flex flex-col gap-y-2">
+                                            <div class="flex flex-row gap-x-3">
+                                                <img
+                                                    src="/images/price-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >Rp. {{formatRupiah this.price}},00</p>
+                                            </div>
+                                            <div class="flex flex-row gap-x-3">
+                                                <img
+                                                    src="/images/location-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-[#929292]"
+                                                >{{this.place.name}}</p>
+                                            </div>
+                                        </div>
+                                        <a
+                                            href=""
+                                            class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
+                                        >Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <div class="flex justify-center w-full h-full pt-60">
+                        <p class="font-poppins text-[#1E1E1E] opacity-40 text-[18px]">Menu tidak ditemukan</p>
+                    </div>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+
+    {{> navbarScript}}
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Kita</title>
+
+    {{> font}}
+
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body>
+    <div class="w-full bg-white min-h-screen">
+        {{> navbar}}
+
+        <section id="content" class="w-full bg-white pt-14 pb-20">
+            <div class="flex flex-col max-w-[340px] mx-auto lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px]">
+                <div class="flex flex-col gap-y-5 lg:gap-y-0 lg:flex-row mx-auto lg:mx-0 w-full lg:justify-between lg:items-center mb-10">
+                    <p class="font-poppins font-semibold text-kirani-black text-[24px] lg:text-[32px] xl:text-[36px] text-center">Cinema Kita</p>
+                    <form action="/movies" class="flex flex-row items-center gap-x-2 ring ring-gray-border focus-within:ring-primary-pink hover:ring-primary-pink hover:ring-2 focus-within:ring-2 rounded-lg shadow-md px-4 py-[10px] w-[90%] lg:w-fit lg:mx-0 mx-auto">
+                        <svg class="w-5 opacity-[40%]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        <input type="text" name="search" value="{{search}}" placeholder="Search film" class="w-full focus:outline-none placeholder:text-[#1E1E1E] placeholder:opacity-[40%] placeholder:font-poppins placeholder:text-[14px]">
+                    </form>
+                </div>
+
+                {{#if movies.length}}
+                    <div class="w-full bg-white grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 items-stretch">
+                        {{#each movies}}
+                            <div class="flex flex-col">
+                                <img
+                                    src="{{this.imageURL}}"
+                                    alt=""
+                                    class="w-full rounded-t-[20px]"
+                                />
+                                <div
+                                    class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
+                                >
+                                    <p
+                                        class="font-poppins font-semibold text-black text-[16px] text-center mb-3"
+                                    >{{this.title}}</p>
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="flex flex-row justify-between items-center mb-3"
+                                        >
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/genre-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{this.genre}}</p>
+                                            </div>
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/origin-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{this.origin}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="flex flex-row justify-between items-center"
+                                        >
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/him-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{#if this.himRating}}{{this.himRating}}{{else}}-{{/if}}/10</p>
+                                            </div>
+                                            <div
+                                                class="flex flex-row gap-x-3 justify-between items-center"
+                                            >
+                                                <img
+                                                    src="/images/her-icon.svg"
+                                                    alt=""
+                                                />
+                                                <p
+                                                    class="font-poppins italic text-[14px] text-black"
+                                                >{{#if this.herRating}}{{this.herRating}}{{else}}-{{/if}}/10</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <div class="flex justify-center w-full h-full pt-60">
+                        <p class="font-poppins text-[#1E1E1E] opacity-40 text-[18px]">Film tidak ditemukan</p>
+                    </div>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

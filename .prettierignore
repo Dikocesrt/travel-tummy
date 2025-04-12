@@ -1,1 +1,2 @@
-src/views/*.hbs
+src/templates/views/**/*.hbs
+src/templates/partials/**/*.hbs

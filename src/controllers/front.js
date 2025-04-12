@@ -1,5 +1,7 @@
 const showFront = (req, res) => {
-    res.render("index");
+    res.render("index", {
+        isFront: true,
+    });
 };
 
 module.exports = {

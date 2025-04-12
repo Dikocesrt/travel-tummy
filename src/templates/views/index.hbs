@@ -4,100 +4,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Travel Tummy</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-        />
+        {{> font}}
 
         <link rel="stylesheet" href="/css/output.css" />
     </head>
     <body>
         <div class="w-full min-h-screen bg-white">
-            <nav class="w-full bg-white py-4">
-                <div
-                    class="w-full max-w-[340px] mx-auto flex flex-col gap-y-3 lg:hidden"
-                >
-                    <div
-                        class="w-full flex flex-row items-center justify-between"
-                    >
-                        <a
-                            href="/" class="font-poppins text-black font-bold text-[16px] hover:scale-105 hover:duration-300"
-                        >Travel<span class="text-primary-pink">Tummy</span></a>
-                        <svg
-                            id="dropdown-toggle"
-                            class="w-10 hover:cursor-pointer hover:scale-105 hover:duration-300"
-                            viewBox="0 -0.5 25 25"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                                id="SVGRepo_tracerCarrier"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></g><g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M6.5 11.75C6.08579 11.75 5.75 12.0858 5.75 12.5C5.75 12.9142 6.08579 13.25 6.5 13.25V11.75ZM18.5 13.25C18.9142 13.25 19.25 12.9142 19.25 12.5C19.25 12.0858 18.9142 11.75 18.5 11.75V13.25ZM6.5 15.75C6.08579 15.75 5.75 16.0858 5.75 16.5C5.75 16.9142 6.08579 17.25 6.5 17.25V15.75ZM18.5 17.25C18.9142 17.25 19.25 16.9142 19.25 16.5C19.25 16.0858 18.9142 15.75 18.5 15.75V17.25ZM6.5 7.75C6.08579 7.75 5.75 8.08579 5.75 8.5C5.75 8.91421 6.08579 9.25 6.5 9.25V7.75ZM18.5 9.25C18.9142 9.25 19.25 8.91421 19.25 8.5C19.25 8.08579 18.9142 7.75 18.5 7.75V9.25ZM6.5 13.25H18.5V11.75H6.5V13.25ZM6.5 17.25H18.5V15.75H6.5V17.25ZM6.5 9.25H18.5V7.75H6.5V9.25Z"
-                                    fill="#000000"
-                                ></path>
-                            </g></svg>
-                    </div>
-                    <div id="nav-dropdown" class="w-full hidden flex-col gap-y-3 lg:hidden">
-                        <a href="" class="flex flex-col group w-fit">
-                            <p class="font-poppins font-medium text-black text-[15px]">Tempat</p>
-                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
-                        </a>
-                        <a href="" class="flex flex-col group w-fit">
-                            <p class="font-poppins font-medium text-black text-[15px]">Menu</p>
-                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
-                        </a>
-                        <a href="" class="flex flex-col group w-fit mb-2">
-                            <p class="font-poppins font-medium text-black text-[15px]">Movie</p>
-                            <div class="hidden border-b-2 border-primary-pink group-hover:block w-[85%] mx-auto"></div>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px] mx-auto flex-row items-center justify-between hidden lg:flex"
-                >
-                    <div
-                        class="w-full flex flex-row items-center justify-between"
-                    >
-                        <p
-                            class="font-poppins text-black font-bold text-[32px]"
-                        >Travel<span class="text-primary-pink">Tummy</span></p>
-                        <div class="flex flex-row gap-x-4">
-                            <a
-                                href=""
-                                class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300"
-                            >
-                                <img src="/images/store-icon.svg" alt="" />
-                                <p
-                                    class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white"
-                                >Tempat</p>
-                            </a>
-                            <a
-                                href=""
-                                class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300"
-                            >
-                                <img src="/images/dish-icon.svg" alt="" />
-                                <p
-                                    class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white"
-                                >Menu</p>
-                            </a>
-                            <a
-                                href=""
-                                class="flex flex-row gap-x-2 ring-1 ring-primary-pink rounded-[18px] py-1 px-3 items-center group hover:bg-primary-pink hover:scale-[108%] hover:duration-300"
-                            >
-                                <img src="/images/glases-icon.svg" alt="" />
-                                <p
-                                    class="font-poppins font-semibold text-primary-pink text-[16px] group-hover:text-white"
-                                >Movie</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            {{> navbar}}
 
             <section id="hero" class="w-full relative h-[720px]">
                 <img
@@ -809,14 +722,6 @@
             </section>
         </div>
 
-    <script>
-        const svgToggle = document.getElementById('dropdown-toggle');
-        const dropdown = document.getElementById('nav-dropdown');
-
-        svgToggle.addEventListener('click', () => {
-            dropdown.classList.toggle('hidden');
-            dropdown.classList.toggle('flex');
-        });
-    </script>
+        {{> navbarScript}}
     </body>
 </html>
