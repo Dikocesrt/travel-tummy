@@ -13,4 +13,6 @@ router.get("/menus", listMenus);
 
 router.get("/movies", listMovies);
 
+router.get("/places/:id", detailPlace);
+
 module.exports = router;
