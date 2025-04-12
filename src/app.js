@@ -23,6 +23,9 @@ hbs.registerHelper("formatRupiah", function (value) {
     if (typeof value !== "number") return value;
     return value.toLocaleString("id-ID");
 });
+hbs.registerHelper("divide", function (value, divisor) {
+    return value / divisor;
+});
 
 // PUBLIC DIR CONFIGS
 const publicDirectoryPath = path.join(__dirname, "../public");

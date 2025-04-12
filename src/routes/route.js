@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { showFront } = require("../controllers/front");
-const { listPlaces } = require("../controllers/place");
+const { listPlaces, detailPlace } = require("../controllers/place");
 const { listMenus } = require("../controllers/menu");
 const { listMovies } = require("../controllers/movie");
 

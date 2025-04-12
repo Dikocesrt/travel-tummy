@@ -1,4 +1,4 @@
-const { Place, Menu } = require("../models/index");
+const { Place, Menu, Photo } = require("../models/index");
 const getURL = require("../helper/getCloudinary");
 const { Op } = require("sequelize");
 const sequelize = require("../configs/database");
@@ -49,7 +49,7 @@ const detailPlace = async (req, res) => {
             limit: 4,
         });
 
-        const photos = await Place.findAll({
+        const photos = await Photo.findAll({
             where: {
                 placeID: id,
             },
@@ -73,4 +73,4 @@ const detailPlace = async (req, res) => {
     }
 };
 
-module.exports = { listPlaces };
+module.exports = { listPlaces, detailPlace };
