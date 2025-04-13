@@ -27,11 +27,26 @@
                     <div class="w-full bg-white grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 items-stretch">
                         {{#each movies}}
                             <div class="flex flex-col">
-                                <img
-                                    src="{{this.imageURL}}"
-                                    alt=""
-                                    class="w-full rounded-t-[20px]"
-                                />
+                                <div class="relative w-full">
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full opacity-0 pointer-events-none select-none"
+                                    />
+                                    <img
+                                        src="{{this.imageURL}}"
+                                        alt=""
+                                        class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
+                                    />
+                                    <div
+                                        class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
+                                    >
+                                        <img src="/images/star-icon.svg" alt="" />
+                                        <p
+                                            class="font-poppins font-medium text-[14px] text-[#1F1449]"
+                                        >{{this.overallRating}}</p>
+                                    </div>
+                                </div>
                                 <div
                                     class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
                                 >
