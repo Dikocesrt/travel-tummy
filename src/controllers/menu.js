@@ -1,6 +1,7 @@
 const { Menu, Place, Photo } = require("../models/index");
 const getURL = require("../helper/getCloudinary");
 const { Op } = require("sequelize");
+const sequelize = require("../configs/database");
 
 const listMenus = async (req, res) => {
     try {
@@ -91,6 +92,10 @@ const detailMenu = async (req, res) => {
             plainMenu.imageURL = getURL(plainMenu.imageURL, 1450, 620);
         }
 
+        const plainPlace = menu.place.get({ plain: true });
+
+        const mapURL = getURL(plainPlace.mapURL, 1450, 400);
+
         const photos = await Photo.findAll({
             where: {
                 placeID: menu.place.id,
@@ -111,10 +116,11 @@ const detailMenu = async (req, res) => {
             menu: plainMenu,
             smallImage,
             photos,
+            mapURL,
         });
     } catch (error) {
         console.log("DETAIL MENU ERROR ==> " + error);
     }
 };
 
-module.exports = { listMenus };
+module.exports = { listMenus, detailMenu };

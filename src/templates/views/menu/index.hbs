@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     {{else}}
-                        <p class="font-poppins font-semibold text-kirani-black text-[24px] lg:text-[32px] xl:text-[36px] text-center">Menu Makanan Dan Minuman</p>
+                        <p class="font-poppins font-semibold text-kirani-black text-[24px] lg:text-[32px] xl:text-[36px] text-center">Makanan Dan Minuman</p>
                     {{/if}}
 
                     <form action="{{actionURL}}" class="flex flex-row items-center gap-x-2 ring ring-gray-border focus-within:ring-primary-pink hover:ring-primary-pink hover:ring-2 focus-within:ring-2 rounded-lg shadow-md px-4 py-[10px] w-[90%] lg:w-fit lg:mx-0 mx-auto">
@@ -92,7 +92,7 @@
                                             {{/if}}
                                         </div>
                                         <a
-                                            href=""
+                                            href="/menus/{{this.id}}"
                                             class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
                                         >Detail</a>
                                     </div>

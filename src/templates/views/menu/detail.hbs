@@ -3,9 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{menu.name}}</title>
+
+    {{> font}}
+
+    <link rel="stylesheet" href="/css/output.css" />
 </head>
 <body>
+    {{>navbar}}
+
+    <section id="content" class="w-full bg-white pt-14 pb-20">
+        <div class="flex flex-col max-w-[340px] mx-auto lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px]">
+            <div class="flex flex-row items-center gap-x-3 w-fit mx-auto lg:mx-0 mb-4 lg:mb-8">
+                <p class="font-poppins font-bold text-kirani-black text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px]">{{menu.name}}</p>
+                <div class="flex flex-row items-center gap-x-1">
+                    <svg class="w-6 lg:w-8 2xl:w-9" fill="#FFA235" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>star</title> <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path> </g></svg>
+
+                    <p class="font-poppins font-medium text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-[#1F1449]">{{menu.overallRating}}/10</p>
+                </div>
+            </div>
+
+            <div class="w-full relative mb-6 lg:mb-10">
+                <img src="{{smallImage}}" class="w-full h-[250px] opacity-0 pointer-events-none select-none lg:hidden" alt="">
+                <img src="{{smallImage}}" class="w-full h-[250px] rounded-[12px] absolute z-10 top-0 left-0 lg:hidden" alt="">
+                <img src="{{menu.imageURL}}" class="w-full opacity-0 pointer-events-none select-none hidden lg:flex" alt="">
+                <img src="{{menu.imageURL}}" class="w-full h-full rounded-[12px] absolute z-10 top-0 left-0 hidden lg:flex" alt="">
+                <div class="absolute bottom-0 left-0 z-20 flex-row p-2 gap-x-2 xl:gap-x-4 rounded-t-[12px] rounded-br-[12px] bg-[#F8ECEB] w-fit hidden lg:flex">
+                    <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
+                        <img class="w-10 2xl:w-11" src="/images/portion-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{menu.portion}}</p>
+                    </div>
+
+                    <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
+                        <img class="w-9 2xl:w-10" src="/images/coin.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{formatRupiah menu.price}},00</p>
+                    </div>
+
+                    <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
+                        <img class="w-10 2xl:w-11" src="/images/place-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{menu.place.name}}</p>
+                    </div>
+
+                    <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
+                        <img class="w-9 2xl:w-10" src="/images/him-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{menu.himRating}}/10</p>
+                    </div>
+
+                    <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
+                        <img class="w-9 2xl:w-10" src="/images/her-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{menu.herRating}}/10</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full bg-[#F8ECEB] rounded-[12px] p-4 lg:hidden mb-6">
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex flex-row items-center gap-x-2">
+                            <img class="w-8" src="/images/portion-icon.svg" alt="">
+                            <p class="font-poppins font-regular text-[11px] text-black">{{menu.portion}}</p>
+                        </div>
+
+                        <div class="flex flex-row items-center gap-x-2">
+                            <img class="w-8" src="/images/coin.svg" alt="">
+                            <p class="font-poppins font-regular text-[11px] text-black">{{formatRupiah menu.price}},00</p>
+                        </div>
+
+                        <div class="flex flex-row items-center gap-x-2">
+                            <img class="w-8" src="/images/place-icon.svg" alt="">
+                            <p class="font-poppins font-regular text-[11px] text-black">{{menu.place.name}}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex flex-row items-center gap-x-2">
+                            <img class="w-8" src="/images/him-icon.svg" alt="">
+                            <p class="font-poppins font-regular text-[11px] text-black">{{menu.himRating}}/10</p>
+                        </div>
+
+                        <div class="flex flex-row items-center gap-x-2">
+                            <img class="w-8" src="/images/her-icon.svg" alt="">
+                            <p class="font-poppins font-regular text-[11px] text-black">{{menu.herRating}}/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="font-poppins font-light text-[12px] lg:text-[16px] xl:text-[20px] text-black mb-8 text-justify">{{menu.description}}</p>
+
+            {{#if photos}}
+            <div class="flex flex-col w-full mb-8">
+                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-8">Album <span class="text-primary-pink">Narsis</span> Berdua</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+                    {{#each photos}}
+                        <img src="{{this.imageURL}}" class="rounded-[12px] w-full h-full" alt="">
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="flex flex-col w-full">
+                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-4 lg:mb-8">Map <span class="text-primary-pink">of</span> Memories</p>
+                <a href="">
+                    <img src="{{mapURL}}" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
     
+    {{> navbarScript}}
 </body>
 </html>
