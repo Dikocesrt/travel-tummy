@@ -44,7 +44,7 @@ const showFront = async (req, res) => {
         });
 
         const movies = await Movie.findAll({
-            order: [["her_rating", "DESC"]],
+            order: [["overall_rating", "DESC"]],
             limit: 3,
         });
 

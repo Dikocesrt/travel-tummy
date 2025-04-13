@@ -83,6 +83,11 @@ const Place = sequelize.define(
             allowNull: false,
             field: "map_url",
         },
+        mapLink: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            field: "map_link",
+        },
     },
     {
         tableName: "places",

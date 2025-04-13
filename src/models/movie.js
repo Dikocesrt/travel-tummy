@@ -37,6 +37,11 @@ const Movie = sequelize.define(
             allowNull: false,
             field: "her_rating",
         },
+        overallRating: {
+            type: DataTypes.FLOAT,
+            allowNull: true,
+            field: "overall_rating",
+        },
     },
     {
         tableName: "movies",
