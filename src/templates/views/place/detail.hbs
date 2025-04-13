@@ -14,8 +14,8 @@
 
     <div class="w-full min-h-screen bg-white pt-14 pb-20">
         <div class="w-full mx-auto max-w-[340px] lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[1450px] flex flex-col">
-            <div class="flex flex-row items-center gap-x-4 w-fit mx-auto lg:mx-0 mb-8">
-                <p class="font-poppins font-semibold text-kirani-black text-[20px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px]">{{place.name}}</p>
+            <div class="flex flex-row items-center gap-x-3 w-fit mx-auto lg:mx-0 mb-8">
+                <p class="font-poppins font-bold text-kirani-black text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px]">{{place.name}}</p>
                 <div class="flex flex-row items-center gap-x-1">
                     <svg class="w-6 lg:w-8 2xl:w-9" fill="#FFA235" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>star</title> <path d="M3.488 13.184l6.272 6.112-1.472 8.608 7.712-4.064 7.712 4.064-1.472-8.608 6.272-6.112-8.64-1.248-3.872-7.808-3.872 7.808z"></path> </g></svg>
 
@@ -23,43 +23,45 @@
                 </div>
             </div>
 
-            <div class="relative w-full mb-6 lg:mb-12">
-                <img src="{{place.imageURL}}" class="w-full opacity-0 pointer-events-none select-none" alt="">
-                <img src="{{place.imageURL}}" class="w-full h-full rounded-[12px] absolute z-10 top-0 left-0" alt="">
+            <div class="relative w-full mb-6 lg:mb-10">
+                <img src="{{smallImage}}" class="w-full h-[250px] opacity-0 pointer-events-none select-none lg:hidden" alt="">
+                <img src="{{smallImage}}" class="w-full h-[250px] rounded-[12px] absolute z-10 top-0 left-0 lg:hidden" alt="">
+                <img src="{{place.imageURL}}" class="w-full opacity-0 pointer-events-none select-none hidden lg:flex" alt="">
+                <img src="{{place.imageURL}}" class="w-full h-full rounded-[12px] absolute z-10 top-0 left-0 hidden lg:flex" alt="">
                 <div class="absolute bottom-0 left-0 z-20 flex-row p-2 gap-x-2 xl:gap-x-4 rounded-t-[12px] rounded-br-[12px] bg-[#F8ECEB] w-fit hidden lg:flex">
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-10" src="/images/parking.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.parking}}</p>
+                        <img class="w-10 2xl:w-11" src="/images/parking.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.parking}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-10" src="/images/wifi.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.wifi}}</p>
+                        <img class="w-10 2xl:w-12" src="/images/wifi.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.wifi}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-9" src="/images/conference.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.room}}</p>
+                        <img class="w-9 2xl:w-11" src="/images/conference.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.room}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-9" src="/images/open.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.openHour}}-{{place.closeHour}}</p>
+                        <img class="w-9 2xl:w-11" src="/images/open.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.openHour}}-{{place.closeHour}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-9" src="/images/coin.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{divide place.priceMin 1000}}-{{divide place.priceMax 1000}}k</p>
+                        <img class="w-9 2xl:w-10" src="/images/coin.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{divide place.priceMin 1000}}-{{divide place.priceMax 1000}}k</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-9" src="/images/him-icon.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.himRating}}/10</p>
+                        <img class="w-9 2xl:w-10" src="/images/him-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.himRating}}/10</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
-                        <img class="w-9" src="/images/her-icon.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] xl:text-[16px]">{{place.herRating}}/10</p>
+                        <img class="w-9 2xl:w-10" src="/images/her-icon.svg" alt="">
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.herRating}}/10</p>
                     </div>
                 </div>
             </div>
@@ -110,6 +112,79 @@
             </div>
 
             <p class="font-poppins font-light text-[12px] lg:text-[16px] xl:text-[20px] text-black mb-8 text-justify">{{place.description}}</p>
+
+            <div class="flex flex-col w-full mb-8">
+                <div class="flex flex-row gap-x-2 items-center mb-8">
+                    <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px]">Yang <span class="text-primary-pink">Kita</span> Icip</p>
+                    <a href="/places/{{place.id}}/menus"><img src="/images/klik.svg" alt="" class="w-9 lg:w-10 xl:w-12 hover:scale-95 duration-300"></a>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-8 items-stretch">
+                    {{#each menus}}
+                        <div class="flex flex-col">
+                            <div class="relative w-full">
+                                <img
+                                    src="{{this.imageURL}}"
+                                    alt=""
+                                    class="w-full opacity-0 pointer-events-none select-none"
+                                />
+                                <img
+                                    src="{{this.imageURL}}"
+                                    alt=""
+                                    class="w-full h-full rounded-t-[20px] absolute z-10 top-0 left-0"
+                                />
+                                <div
+                                    class="absolute top-0 right-0 flex flex-row z-20 items-center gap-x-1 bg-white w-fit ms-auto p-2 rounded-tr-[20px] rounded-bl-[20px]"
+                                >
+                                    <img src="/images/star-icon.svg" alt="" />
+                                    <p
+                                        class="font-poppins font-medium text-[14px] text-[#1F1449]"
+                                    >{{this.overallRating}}</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col rounded-b-[20px] border-b-2 border-x-2 border-primary-pink bg-white py-4 px-6 h-full justify-between"
+                            >
+                                <p
+                                    class="font-poppins font-semibold text-black text-[16px] text-center mb-4"
+                                >{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-row gap-x-3 items-center">
+                                        <img class="w-6"
+                                            src="/images/price-icon.svg"
+                                            alt=""
+                                        />
+                                        <p
+                                            class="font-poppins italic text-[14px] text-black"
+                                        >Rp. {{formatRupiah this.price}},00</p>
+                                    </div>
+                                    <a
+                                        href=""
+                                        class="flex items-center justify-center w-fit px-6 py-2 bg-primary-pink rounded-[10px] font-poppins font-semibold text-[14px] text-white hover:scale-105 hover:duration-300 mt-auto"
+                                    >Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            {{#if photos}}
+            <div class="flex flex-col w-full mb-8">
+                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-8">Album <span class="text-primary-pink">Narsis</span> Berdua</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+                    {{#each photos}}
+                        <img src="{{this.imageURL}}" class="rounded-[12px] w-full h-full" alt="">
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="flex flex-col w-full">
+                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-8">Map <span class="text-primary-pink">of</span> Memories</p>
+                <a href="">
+                    <img src="{{place.mapURL}}" alt="">
+                </a>
+            </div>
         </div>
     </div>
 </body>

@@ -9,10 +9,12 @@ router.get("/", showFront);
 
 router.get("/places", listPlaces);
 
+router.get("/places/:id", detailPlace);
+
+router.get("/places/:id/menus", listMenus);
+
 router.get("/menus", listMenus);
 
 router.get("/movies", listMovies);
-
-router.get("/places/:id", detailPlace);
 
 module.exports = router;

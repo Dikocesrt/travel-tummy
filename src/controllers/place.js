@@ -59,14 +59,41 @@ const detailPlace = async (req, res) => {
 
         const plainPlace = place.get({ plain: true });
 
+        const smallImage = getURL(plainPlace.imageURL, 340, 250);
+
         if (plainPlace.imageURL) {
             plainPlace.imageURL = getURL(plainPlace.imageURL, 1450, 620);
         }
 
+        if (plainPlace.mapURL) {
+            plainPlace.mapURL = getURL(plainPlace.mapURL, 1450, 400);
+        }
+
+        const plainMenus = menus.map((menu) => menu.get({ plain: true }));
+
+        if (plainMenus.length > 0) {
+            plainMenus.map((menu) => {
+                if (menu.imageURL) {
+                    menu.imageURL = getURL(menu.imageURL, 380, 260);
+                }
+            });
+        }
+
+        const plainPhotos = photos.map((photo) => photo.get({ plain: true }));
+
+        if (plainPhotos.length > 0) {
+            plainPhotos.map((photo) => {
+                if (photo.imageURL) {
+                    photo.imageURL = getURL(photo.imageURL, 380, 400);
+                }
+            });
+        }
+
         res.render("place/detail", {
             place: plainPlace,
-            menus,
-            photos,
+            smallImage,
+            menus: plainMenus,
+            photos: plainPhotos,
         });
     } catch (error) {
         console.log("DETAIL PLACE ERROR ==> " + error);
