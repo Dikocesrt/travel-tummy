@@ -33,17 +33,17 @@
                 <div class="absolute bottom-0 left-0 z-20 flex-row p-2 gap-x-2 xl:gap-x-4 rounded-t-[12px] rounded-br-[12px] bg-[#F8ECEB] w-fit hidden lg:flex">
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
                         <img class="w-10 2xl:w-11" src="/images/parking.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.parking}}</p>
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px] first-letter:capitalize">{{place.parking}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
                         <img class="w-10 2xl:w-12" src="/images/wifi.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.wifi}}</p>
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px] first-letter:capitalize">{{#if place.wifi}}{{place.wifi}}{{else}}tidak ada{{/if}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
                         <img class="w-9 2xl:w-11" src="/images/conference.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.room}}</p>
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px] first-letter:capitalize">{{place.room}}</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
@@ -58,12 +58,12 @@
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
                         <img class="w-9 2xl:w-10" src="/images/him-icon.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.himRating}}/10</p>
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{#if place.himRating}}{{place.himRating}}{{else}}-{{/if}}/10</p>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-1 xl:gap-x-2">
                         <img class="w-9 2xl:w-10" src="/images/her-icon.svg" alt="">
-                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{place.herRating}}/10</p>
+                        <p class="font-poppins font-regular text-black text-[12px] 2xl:text-[18px] xl:text-[16px]">{{#if place.herRating}}{{place.herRating}}{{else}}-{{/if}}/10</p>
                     </div>
                 </div>
             </div>
@@ -73,29 +73,29 @@
                     <div class="flex flex-col gap-y-2">
                         <div class="flex flex-row items-center gap-x-2">
                             <img class="w-8" src="/images/parking.svg" alt="">
-                            <p class="font-poppins font-regular text-[11px] text-black">{{place.parking}}</p>
+                            <p class="font-poppins font-regular text-[11px] text-black first-letter:capitalize">{{place.parking}}</p>
                         </div>
 
                         <div class="flex flex-row items-center gap-x-2">
                             <img class="w-8" src="/images/wifi.svg" alt="">
-                            <p class="font-poppins font-regular text-[11px] text-black">{{place.wifi}}</p>
+                            <p class="font-poppins font-regular text-[11px] text-black first-letter:capitalize">{{#if place.wifi}}{{place.wifi}}{{else}}Tidak ada{{/if}}</p>
                         </div>
 
                         <div class="flex flex-row items-center gap-x-2">
                             <img class="w-8" src="/images/conference.svg" alt="">
-                            <p class="font-poppins font-regular text-[11px] text-black">{{place.room}}</p>
+                            <p class="font-poppins font-regular text-[11px] text-black first-letter:capitalize">{{place.room}}</p>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-y-2">
                         <div class="flex flex-row items-center gap-x-2">
                             <img class="w-8" src="/images/him-icon.svg" alt="">
-                            <p class="font-poppins font-regular text-[11px] text-black">{{place.himRating}}/10</p>
+                            <p class="font-poppins font-regular text-[11px] text-black">{{#if place.himRating}}{{place.himRating}}{{else}}-{{/if}}/10</p>
                         </div>
 
                         <div class="flex flex-row items-center gap-x-2">
                             <img class="w-8" src="/images/her-icon.svg" alt="">
-                            <p class="font-poppins font-regular text-[11px] text-black">{{place.herRating}}/10</p>
+                            <p class="font-poppins font-regular text-[11px] text-black">{{#if place.herRating}}{{place.herRating}}{{else}}-{{/if}}/10</p>
                         </div>
 
                         <div class="flex flex-row items-center gap-x-2">
@@ -113,8 +113,9 @@
                 </div>
             </div>
 
-            <p class="font-poppins font-light text-[12px] lg:text-[16px] xl:text-[20px] text-black mb-8 text-justify">{{place.description}}</p>
+            <div class="font-poppins font-light text-[12px] lg:text-[16px] xl:text-[20px] text-black mb-8 text-justify first-letter:capitalize">{{{place.descriptionHTML}}}</div>
 
+            {{#if menus}}
             <div class="flex flex-col w-full mb-8">
                 <div class="flex flex-row gap-x-2 items-center mb-8">
                     <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px]">Yang <span class="text-primary-pink">Kita</span> Icip</p>
@@ -169,10 +170,11 @@
                     {{/each}}
                 </div>
             </div>
+            {{/if}}
 
             {{#if photos}}
             <div class="flex flex-col w-full mb-8">
-                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-8">Album <span class="text-primary-pink">Narsis</span> Berdua</p>
+                <p class="font-poppin font-extrabold text-black text-[22px] lg:text-[28px] xl:text-[32px] mb-8">Album <span class="text-primary-pink">Narsis</span></p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8 items-stretch">
                     {{#each photos}}
                         <img src="{{this.imageURL}}" class="rounded-[12px] w-full h-full" alt="">

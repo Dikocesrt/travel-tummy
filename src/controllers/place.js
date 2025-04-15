@@ -2,6 +2,7 @@ const { Place, Menu, Photo } = require("../models/index");
 const getURL = require("../helper/getCloudinary");
 const { Op } = require("sequelize");
 const sequelize = require("../configs/database");
+const marked = require("marked");
 
 const listPlaces = async (req, res) => {
     try {
@@ -19,6 +20,12 @@ const listPlaces = async (req, res) => {
         plainPlaces.map((place) => {
             if (place.imageURL) {
                 place.imageURL = getURL(place.imageURL, 380, 260);
+            }
+        });
+
+        plainPlaces.map((place) => {
+            if (place.description) {
+                place.descriptionHTML = marked.parse(place.description);
             }
         });
 
@@ -87,6 +94,10 @@ const detailPlace = async (req, res) => {
                     photo.imageURL = getURL(photo.imageURL, 380, 400);
                 }
             });
+        }
+
+        if (plainPlace.description) {
+            plainPlace.descriptionHTML = marked.parse(plainPlace.description);
         }
 
         res.render("place/detail", {

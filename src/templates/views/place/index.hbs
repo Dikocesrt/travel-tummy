@@ -56,9 +56,9 @@
                                     <p
                                         class="font-poppins font-semibold text-black text-[16px] text-center mb-2"
                                     >{{this.name}}</p>
-                                    <p
-                                        class="font-poppins font-light text-[12px] text-black text-center mb-2"
-                                    >{{truncate this.description 90}}</p>
+                                    <div
+                                        class="font-poppins font-light text-[12px] text-black text-center mb-2 first-letter:capitalize"
+                                    >{{{truncate this.descriptionHTML 90}}}</div>
                                 </div>
                                 <a
                                     href="/places/{{this.id}}"

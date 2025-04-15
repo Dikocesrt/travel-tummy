@@ -2,6 +2,7 @@ const { Menu, Place, Photo } = require("../models/index");
 const getURL = require("../helper/getCloudinary");
 const { Op } = require("sequelize");
 const sequelize = require("../configs/database");
+const marked = require("marked");
 
 const listMenus = async (req, res) => {
     try {
@@ -110,6 +111,10 @@ const detailMenu = async (req, res) => {
                     photo.imageURL = getURL(photo.imageURL, 380, 400);
                 }
             });
+        }
+
+        if (plainMenu.description) {
+            plainMenu.descriptionHTML = marked.parse(plainMenu.description);
         }
 
         res.render("menu/detail", {
